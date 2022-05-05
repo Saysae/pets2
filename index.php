@@ -25,6 +25,15 @@ $f3->route('GET /order', function() {
     echo $view->render('views/pet-order.html');
 });
 
+//Order2 route
+$f3->route('GET|POST /order2', function() {
+
+    $_SESSION['pet'] = $_POST['pet'];
+    $_SESSION['color'] = $_POST['color'];
+    $view = new Template();
+    echo $view->render('views/pet-order2.html');
+});
+
 //Run fat free
 // -> is invoking the run() method in the fat-free
 $f3->run();
